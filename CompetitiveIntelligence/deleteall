@@ -1,0 +1,14 @@
+match (n)
+where n.name IS NULL
+optional match (n)-[r]-()
+delete n, r
+
+
+
+START n=node(*) 
+//WITH n
+where n.__type__="Product" 
+SET n:Product
+RETURN n;
+
+START n=node(*) where n.__type__="Product" SET n:Product RETURN n;
